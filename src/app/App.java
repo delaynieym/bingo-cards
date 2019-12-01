@@ -16,7 +16,13 @@ public class App {
 			"safe place" };
 
 	public static void main(String[] args) throws FileNotFoundException {
-		output = System.out;
+		for (int i = 0; i < 7; i++) {
+			printFile(i);
+		}
+	}
+
+	public static void printFile(int num) throws FileNotFoundException {
+		output = new PrintStream(new File("output" + num + ".txt"));
 		ArrayList<Integer> used = new ArrayList<Integer>();
 
 		for (int i = 0; i < 4; i++) {
@@ -24,16 +30,18 @@ public class App {
 				int index = random.nextInt(22);
 				if (!used.contains(index)) {
 					used.add(index);
-					output.print(answers[index]);
-					output.print("\t\t\t\t\t\t\t\t");
-				} else if (used.contains(index)) {
-					j--; // System.out.println("index" + used.contains(index));
+					output.printf("%-25s", answers[index]);
+				} else {
+					j--;
 				}
 
 			}
-			output.println();
+			for (int returns = 0; returns < 5; returns++) {
+				output.println();
+			}
 		}
 
 		output.close();
+
 	}
 }
