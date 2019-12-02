@@ -1,5 +1,5 @@
 language: java
 
 script:
-  - javac /src/App.java
-  - java /bin/App.class
+  - javac src/app/App.java
+  - java bin/app/App.class
