@@ -2,4 +2,3 @@ language: java
 
 script:
   - javac src/app/App.java
-  - java bin/app/App.class
