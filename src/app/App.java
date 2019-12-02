@@ -42,6 +42,6 @@ public class App {
 		}
 
 		output.close();
-
+		System.out.println("hello world");
 	}
 }

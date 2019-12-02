@@ -1,1 +1,5 @@
 language: java
+
+script:
+  - javac /src/App.java
+  - java /bin/App.class
